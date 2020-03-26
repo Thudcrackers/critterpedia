@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fish.name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @fish.time %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @fish.value %>
+</p>
+
+<%= link_to 'Edit', edit_fish_path(@fish) %> |
+<%= link_to 'Back', fish_index_path %>
