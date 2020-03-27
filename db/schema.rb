@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_172916) do
+ActiveRecord::Schema.define(version: 2020_03_26_201037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,23 @@ ActiveRecord::Schema.define(version: 2020_03_26_172916) do
     t.bigint "bug_id", null: false
   end
 
+  create_table "bugs_northern_months", id: false, force: :cascade do |t|
+    t.bigint "northern_month_id", null: false
+    t.bigint "bug_id", null: false
+  end
+
+  create_table "bugs_southern_months", id: false, force: :cascade do |t|
+    t.bigint "southern_month_id", null: false
+    t.bigint "bug_id", null: false
+  end
+
   create_table "fish", force: :cascade do |t|
     t.string "name"
     t.string "time"
     t.integer "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "shadow_size"
   end
 
   create_table "fish_months", id: false, force: :cascade do |t|
@@ -41,7 +52,23 @@ ActiveRecord::Schema.define(version: 2020_03_26_172916) do
     t.bigint "fish_id", null: false
   end
 
-  create_table "months", force: :cascade do |t|
+  create_table "fish_northern_months", id: false, force: :cascade do |t|
+    t.bigint "northern_month_id", null: false
+    t.bigint "fish_id", null: false
+  end
+
+  create_table "fish_southern_months", id: false, force: :cascade do |t|
+    t.bigint "southern_month_id", null: false
+    t.bigint "fish_id", null: false
+  end
+
+  create_table "northern_months", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "southern_months", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

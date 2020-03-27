@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :months
   resources :fish
   resources :bugs
+  resources :northern_months
+  resources :southern_months
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
