@@ -4,12 +4,15 @@ class SouthernMonthsController < ApplicationController
   # GET /months
   # GET /months.json
   def index
-    @months = SouthernMonth.all
+    @months = SouthernMonth.all.order('id DESC')
   end
 
   # GET /months/1
   # GET /months/1.json
   def show
+    @months = SouthernMonth.all.order('id DESC')
+    @bugs = @month.bugs
+    @fish = @month.fish
   end
 
   # GET /months/new

@@ -1,0 +1,10 @@
+.container
+    .div
+        .row.m-3
+            .col-6
+                %h3 Southern Hemisphere
+            .col-6
+                %div
+                    In the northern hemisphere?
+                    = link_to "Click here to switch", northern_months_path, :class => "btn btn-primary", :style => "color:white"
+    = render 'grid'

@@ -10,7 +10,9 @@ class NorthernMonthsController < ApplicationController
   # GET /months/1
   # GET /months/1.json
   def show
+    @months = NorthernMonth.all.order('id DESC')
     @bugs = @month.bugs
+    @fish = @month.fish
   end
 
   # GET /months/new

@@ -1,0 +1,20 @@
+= form_with(model: bug, local: true) do |form|
+  - if bug.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(bug.errors.count, "error")
+        prohibited this bug from being saved:
+      %ul
+        - bug.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :time
+    = form.text_field :time
+  .field
+    = form.label :value
+    = form.number_field :value
+  .actions
+    = form.submit

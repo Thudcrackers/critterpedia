@@ -1,5 +1,6 @@
 class BugsController < ApplicationController
   before_action :set_bug, only: [:show, :edit, :update, :destroy]
+  before_action :get_months
 
   # GET /bugs
   # GET /bugs.json

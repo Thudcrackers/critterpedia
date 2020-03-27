@@ -1,0 +1,22 @@
+.container
+  .row
+    .col-6.overflow-auto{:style => "max-height:65vh"}
+      %h4= 'Bugs in ' + @month.name
+      - @bugs.each do |bug|
+        .card
+          .card-body
+            %h5.card-title= bug.name
+            %p.card-text= bug.time
+            %p.card-text
+              %img{:height => "16px", :src => "https://vignette.wikia.nocookie.net/animalcrossing/images/0/04/BellBag.png"}/
+              = number_with_delimiter(bug.value)
+    .col-6.overflow-auto{:style => "max-height:65vh"}
+      %h4= 'Fish in ' + @month.name
+      - @fish.each do |fish|
+        .card
+          .card-body
+            %h5.card-title= bug.name
+            %p.card-text= bug.time
+            %p.card-text
+              %img{:height => "16px", :src => "https://vignette.wikia.nocookie.net/animalcrossing/images/0/04/BellBag.png"}/
+              = number_with_delimiter(bug.value)

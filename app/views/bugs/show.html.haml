@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @bug.name
+%p
+  %strong Time:
+  = @bug.time
+%p
+  %strong Value:
+  = @bug.value
+= link_to 'Edit', edit_bug_path(@bug)
+|
+= link_to 'Back', bugs_path

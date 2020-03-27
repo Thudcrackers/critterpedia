@@ -1,0 +1,12 @@
+.container
+  %h1 Bugs
+  .row
+    - @bugs.each do |bug|
+      .col-md-3
+        .card
+          .card-body
+            %h5.card-title= bug.name
+            %p.card-text= bug.time
+            %p.card-text
+              %img{:height => "16px", :src => "https://vignette.wikia.nocookie.net/animalcrossing/images/0/04/BellBag.png"}/
+              = number_with_delimiter(bug.value)

@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
-  before_action :get_bugs, only: [:home]
+  before_action :get_months, only: [:home]
 
   def home
+    @months = Month.all.order('id DESC')
   end
 
   private
-  def get_bugs
-    @bugs = Bug.all
+  def get_months
+    @months = Month.all.order('id DESC')
   end
 end
