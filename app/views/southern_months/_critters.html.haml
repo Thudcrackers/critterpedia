@@ -15,8 +15,8 @@
       - @fish.each do |fish|
         .card
           .card-body
-            %h5.card-title= bug.name
-            %p.card-text= bug.time
+            %h5.card-title= fish.name
+            %p.card-text= fish.time
             %p.card-text
               %img{:height => "16px", :src => "https://vignette.wikia.nocookie.net/animalcrossing/images/0/04/BellBag.png"}/
-              = number_with_delimiter(bug.value)
+              = number_with_delimiter(fish.value)
